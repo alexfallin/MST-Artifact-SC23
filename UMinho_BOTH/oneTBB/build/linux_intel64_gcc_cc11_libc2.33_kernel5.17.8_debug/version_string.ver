@@ -1,0 +1,11 @@
+#define __TBB_VERSION_STRINGS(N) \
+#N": BUILD_HOST\t\taustin (x86_64)" ENDL \
+#N": BUILD_OS\t\tFedora release 34 (Thirty Four)" ENDL \
+#N": BUILD_KERNEL\tLinux 5.17.8-100.fc34.x86_64 #1 SMP PREEMPT Mon May 16 01:48:47 UTC 2022" ENDL \
+#N": BUILD_GCC\t\tg++ (GCC) 11.3.1 20220421 (Red Hat 11.3.1-2)" ENDL \
+#N": BUILD_LIBC\t2.33" ENDL \
+#N": BUILD_LD\t\tGNU ld version 2.35.2-6.fc34" ENDL \
+#N": BUILD_TARGET\tintel64 on cc11_libc2.33_kernel5.17.8" ENDL \
+#N": BUILD_COMMAND\tg++ -DTBB_USE_DEBUG -DDO_ITT_NOTIFY -g -O0 -DUSE_PTHREAD -m64 -fPIC -D__TBB_BUILD=1 -Wall -Wno-parentheses -I../../src -I../../src/rml/include -I../../include -I." ENDL \
+
+#define __TBB_DATETIME "Mon Aug 15 02:18:27 PM UTC 2022"

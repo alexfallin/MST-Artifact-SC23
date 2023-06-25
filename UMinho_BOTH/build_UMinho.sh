@@ -1,16 +1,14 @@
 #!/bin/bash
-echo 'ECL-MST Runs'
-echo 'Creating symlink to inputs'
+echo 'Building UMinho MST'
 
-ln -s ../Inputs inputs
+echo 'UMinho'
+git clone https://github.com/Beatgodes/BoruvkaUMinho.git
+cd BoruvkaUMinho/
 
-echo 'Running all files...'
+echo 'oneTBB requirement'
+git clone https://github.com/oneapi-src/oneTBB.git
+cd oneTBB/
+cmake .
+cmake --build .
 
-for FILE in inputs/*.egr
-do
-	./mst $FILE >> ecl_mst_out.csv
-done
-
-echo 'copying results to root directory'
-
-cp ecl_mst_out.csv ..
+echo 'Converting inputs to UMinho format'

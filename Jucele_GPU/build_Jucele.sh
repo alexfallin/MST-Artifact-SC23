@@ -15,3 +15,5 @@ g++ -O3 -march=native ecl2jucele_mst_genweights.cpp -o gconv
 ./gconv inputs/coPapersDBLP.egr coPapersDBLP.egr.jmst
 ./gconv inputs/internet.egr internet.egr.jmst
 ./gconv inputs/USA-road-d.USA.egr inputs/USA-road-d.USA.egr.jmst
+
+echo 'Done building and converting inputs'
