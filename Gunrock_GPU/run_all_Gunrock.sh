@@ -2,7 +2,7 @@
 echo 'Gunrock runs'
 echo 'Running all files...'
 
-for FILE in inputs/*.mst
+for FILE in inputs/*.mtx
 do
 	./gunrock_mst -m $FILE >> gunrock_mst_out.csv
 done
