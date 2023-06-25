@@ -1,5 +1,5 @@
 #!/bin/bash
-echo 'Downloading Inputs'
+echo 'Downloading inputs'
 
 wget -nc https://userweb.cs.txstate.edu/~burtscher/research/ECLgraph/2d-2e20.sym.egr
 wget -nc https://userweb.cs.txstate.edu/~burtscher/research/ECLgraph/amazon0601.egr
@@ -20,4 +20,4 @@ wget -nc https://userweb.cs.txstate.edu/~burtscher/research/ECLgraph/USA-road-d.
 wget -nc https://userweb.cs.txstate.edu/~burtscher/research/ECLgraph/USA-road-d.USA.egr
 
 
-echo 'Done'
+echo 'Done downloading inputs'
