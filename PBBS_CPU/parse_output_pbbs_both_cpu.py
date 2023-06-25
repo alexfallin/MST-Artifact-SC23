@@ -10,7 +10,7 @@ with open('pbbs_ser_out.txt', 'r') as r, open('pbbs_ser_out.csv', 'w') as w:
     for line in lines:
         # If the line starts with an input
         if line.startswith('inputs/'):
-            w.write(line.replace("inputs/", '')
+            w.write(line.replace("inputs/", ''))
         # If the line starts with the graph name...
         elif line.startswith('Parlay'):
             w.write(line.replace("Parlay time: ", ''))
@@ -31,7 +31,7 @@ with open('pbbs_par_out.txt', 'r') as r, open('pbbs_par_out.csv', 'w') as w:
     for line in lines:
         # If the line starts with an input
         if line.startswith('inputs/'):
-            w.write(line.replace("inputs/", '')
+            w.write(line.replace("inputs/", ''))
         # If the line starts with the graph name...
         elif line.startswith('Parlay'):
             w.write(line.replace("Parlay time: ", ''))
