@@ -5,12 +5,16 @@ echo 'Cloning UMinho'
 git clone https://github.com/Beatgodes/BoruvkaUMinho.git
 cd BoruvkaUMinho/
 # Copy files over
-cp ../apps .
-cp ../include .
-cp ../src .
+cp -r ../apps/ .
+cp -r ../include/ .
+cp -r ../src/ .
+cp -r ../lib/ .
 cp ../Makefile .
 echo 'Building'
+make
+export LD_LIBRARY_PATH=/$(pwd)/lib:$LD_LIBRARY_PATH
 echo 'Copying executables'
+cp bin/* ..
 cd ..
 
 #echo 'oneTBB requirement'
@@ -41,3 +45,5 @@ g++ -O3 -march=native ecl2UMinho_genweights.cpp -o gconv
 ./gconv inputs/soc-LiveJournal1.egr soc-LiveJournal1.egr.bu
 ./gconv inputs/USA-road-d.NY.egr USA-road-d.NY.egr.bu
 ./gconv inputs/USA-road-d.USA.egr USA-road-d.USA.egr.bu
+
+echo 'Done converting inputs'
