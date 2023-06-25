@@ -1,16 +1,19 @@
 #!/bin/bash
-echo 'ECL-MST Runs'
-echo 'Creating symlink to inputs'
-
-ln -s ../Inputs inputs
-
+echo 'PBBS MST runs'
 echo 'Running all files...'
 
-for FILE in inputs/*.egr
+for FILE in inputs/*.pbbs
 do
-	./mst $FILE >> ecl_mst_out.csv
+	echo $FILE >> pbbs_par_out.csv
+    echo $FILE >> pbbs_ser_out.csv
+	for i in $(seq 9)
+    do
+		./pbbs_parallel $FILE >> pbbs_par_out.csv
+		./pbbs_serial $FILE >> pbbs_ser_out.csv 
+	done
 done
 
 echo 'copying results to root directory'
 
-cp ecl_mst_out.csv ..
+cp pbbs_par_out.csv ..
+cp pbbs_ser_out.csv ..
