@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Building deoptimization tests'
-nvcc -O3 -arch=sm_70 ECL-MST.cu -o ecl_mst
+nvcc -O3 -arch=sm_70 ECL_MST.cu -o ecl_mst
 nvcc -O3 -arch=sm_70 ECL_MST_NoAtomicGuards.cu -o ecl_mst_NAG
 nvcc -O3 -arch=sm_70 ECL_MST_NoAtomicGuards_NoWarp.cu -o ecl_mst_NAG_NW
 nvcc -O3 -arch=sm_70 ECL_MST_NoAtomicGuards_NoWarp_NoFilter.cu -o ecl_mst_NAG_NW_NF
