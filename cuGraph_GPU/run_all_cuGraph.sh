@@ -1,16 +1,12 @@
 #!/bin/bash
-echo 'ECL-MST Runs'
-echo 'Creating symlink to inputs'
-
-ln -s ../Inputs inputs
-
+echo 'cuGraph runs'
 echo 'Running all files...'
 
-for FILE in inputs/*.egr
+for FILE in inputs/*.mtx
 do
-	./mst $FILE >> ecl_mst_out.csv
+	./cugraph_double $FILE >> cugraph_mst_out.csv
 done
 
 echo 'copying results to root directory'
 
-cp ecl_mst_out.csv ..
+cp cugraph_mst_out.csv ..
