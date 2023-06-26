@@ -1,0 +1,1 @@
+-I/home/alex/mst/cugraph/cpp/src -I/home/alex/mst/cugraph/cpp/include -I/home/waf13/anaconda3/envs/cugraph_dev/include/rapids -I/home/waf13/anaconda3/envs/cugraph_dev/include/rapids/libcudacxx -isystem=/usr/local/cuda/include -isystem=/home/waf13/anaconda3/envs/cugraph_dev/include

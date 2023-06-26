@@ -1,0 +1,7 @@
+typedef char __nv_bool;
+# 209 "/home/waf13/anaconda3/envs/cugraph_dev/lib/gcc/x86_64-conda-linux-gnu/10.4.0/include/stddef.h" 3
+typedef unsigned long size_t;
+#include "crt/device_runtime.h"
+# 264 "/home/waf13/anaconda3/envs/cugraph_dev/x86_64-conda-linux-gnu/include/c++/10.4.0/x86_64-conda-linux-gnu/bits/c++config.h" 3
+typedef unsigned long _ZSt6size_t;
+#include "common_functions.h"

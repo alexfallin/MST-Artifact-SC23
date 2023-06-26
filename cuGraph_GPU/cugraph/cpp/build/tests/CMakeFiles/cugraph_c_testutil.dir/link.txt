@@ -1,0 +1,2 @@
+/home/waf13/anaconda3/envs/cugraph_dev/bin/x86_64-conda-linux-gnu-ar qc libcugraph_c_testutil.a CMakeFiles/cugraph_c_testutil.dir/c_api/test_utils.cpp.o
+/home/waf13/anaconda3/envs/cugraph_dev/bin/x86_64-conda-linux-gnu-ranlib libcugraph_c_testutil.a

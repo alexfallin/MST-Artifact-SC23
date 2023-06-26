@@ -1,0 +1,78 @@
+# Copyright (c) 2018-2022, NVIDIA CORPORATION.
+
+# Usage:
+#   conda build -c rapidsai -c conda-forge -c nvidia .
+{% set version = environ.get('GIT_DESCRIBE_TAG', '0.0.0.dev').lstrip('v') + environ.get('VERSION_SUFFIX', '') %}
+{% set minor_version =  version.split('.')[0] + '.' + version.split('.')[1] %}
+{% set cuda_version='.'.join(environ.get('CUDA', 'unknown').split('.')[:2]) %}
+{% set cuda_major=cuda_version.split('.')[0] %}
+{% set py_version=environ.get('CONDA_PY', 36) %}
+{% set ucx_py_version=environ.get('UCX_PY_VERSION') %}
+package:
+  name: cugraph
+  version: {{ version }}
+
+source:
+  git_url: ../../..
+
+build:
+  number: {{ GIT_DESCRIBE_NUMBER }}
+  string: cuda{{ cuda_major }}_py{{ py_version }}_{{ GIT_DESCRIBE_HASH }}_{{ GIT_DESCRIBE_NUMBER }}
+  script_env:
+    - PARALLEL_LEVEL
+  ignore_run_exports_from:
+    - {{ compiler('cuda') }}
+  preserve_egg_dir: True
+
+requirements:
+  build:
+    - cmake {{ cmake_version }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }} {{ cuda_version }}
+    - sysroot_{{ target_platform }} {{ sysroot_version }}
+  host:
+    - python x.x
+    - cython>=0.29,<0.30
+    - scikit-build>=0.13.1
+    - libcugraph={{ version }}
+    - libraft-headers {{ minor_version }}
+    - libraft-distance {{ minor_version }}
+    - raft-dask {{ minor_version }}
+    - pylibraft {{ minor_version}}
+    - cudf={{ minor_version }}
+    - ucx-py {{ ucx_py_version }}
+    - ucx-proc=*=gpu
+    - cudatoolkit {{ cuda_version }}.*
+    - libraft-headers {{ minor_version }}
+    # FIXME: this pin can be removed once we move to the GitHub Actions build process
+    - setuptools<=65.2.0
+  run:
+    - python x.x
+    - pylibcugraph={{ version }}
+    - libcugraph={{ version }}
+    - libraft-headers {{ minor_version }}
+    - libraft-distance {{ minor_version }}
+    - raft-dask {{ minor_version }}
+    - pylibraft {{ minor_version }}
+    - cudf={{ minor_version }}
+    - dask-cudf {{ minor_version }}
+    - dask-cuda {{ minor_version }}
+    - dask>=2022.9.2
+    - distributed>=2022.9.2
+    - ucx-py {{ ucx_py_version }}
+    - ucx-proc=*=gpu
+    - {{ pin_compatible('cudatoolkit', max_pin='x', min_pin='x') }}
+    - cuda-python >=11.7.1,<12.0
+
+tests:                                 # [linux64]
+  requirements:                        # [linux64]
+    - cudatoolkit {{ cuda_version }}.* # [linux64]
+  imports:                             # [linux64]
+    - cugraph                          # [linux64]
+
+about:
+  home: http://rapids.ai/
+  license: Apache-2.0
+  license_file: ../../../LICENSE
+  summary: cuGraph library

@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=/home/waf13/anaconda3/envs/cugraph_dev/bin/cmake;-P;/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/tmp/cuhornet-populate-gitclone.cmake
+source_dir=/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-src
+work_dir=/home/alex/mst/cugraph/cpp/build/_deps
+repository=https://github.com/rapidsai/cuhornet.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=NEW
+

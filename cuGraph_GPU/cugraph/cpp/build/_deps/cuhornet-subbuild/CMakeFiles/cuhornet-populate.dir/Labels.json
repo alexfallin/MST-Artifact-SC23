@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/CMakeFiles/cuhornet-populate"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/CMakeFiles/cuhornet-populate.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/CMakeFiles/cuhornet-populate-complete.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-build.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-configure.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-download.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-install.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-mkdir.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-patch.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-test.rule"
+		},
+		{
+			"file" : "/data/home/alex/mst/cugraph/cpp/build/_deps/cuhornet-subbuild/cuhornet-populate-prefix/src/cuhornet-populate-stamp/cuhornet-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cuhornet-populate"
+		],
+		"name" : "cuhornet-populate"
+	}
+}
