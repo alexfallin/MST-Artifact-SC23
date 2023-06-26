@@ -1,1 +1,0 @@
--I/home/alex/mst/cugraph/cpp/tests/../../thirdparty/mmio -I/home/alex/mst/cugraph/cpp/tests -I/home/alex/mst/cugraph/cpp/src -I/home/alex/mst/cugraph/cpp/include -I/home/waf13/anaconda3/envs/cugraph_dev/include/rapids -I/home/waf13/anaconda3/envs/cugraph_dev/include/rapids/libcudacxx -isystem=/home/waf13/anaconda3/envs/cugraph_dev/include -isystem=/usr/local/cuda/include
