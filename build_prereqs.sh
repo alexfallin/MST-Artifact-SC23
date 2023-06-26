@@ -5,9 +5,9 @@ echo 'moderngpu'
 git clone https://github.com/moderngpu/moderngpu.git
 cp -r moderngpu/ moderngpu_1.1
 
-echo 'copy and branch'
+echo 'copy and checkout'
 cd moderngpu_1.1
-git branch origin/branch_1.1
+git checkout origin/branch_1.1
 cd ..
 
 echo 'Done with prerequsites'
