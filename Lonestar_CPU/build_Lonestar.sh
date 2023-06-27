@@ -11,7 +11,7 @@ make
 cp minimum-spanningtree-cpu $SRC_DIR/../lonestar_mst
 
 echo 'Converting inputs'
-cd ../inputs/
+cd $SRC_DIR/../inputs/
 ln -s ../../Inputs inputs
 
 g++ -O3 -march=native ecl2lsg_genweights.cpp -o gconv
