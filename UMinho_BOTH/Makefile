@@ -1,9 +1,9 @@
 OPT = -O3
 
-TBB_INCLUDE_PATH = -I./oneTBB/include/
-TBB_LIBRARY_PATH = -L./oneTBB/build/linux_intel64_gcc_cc11_libc2.33_kernel5.17.8_release
+TBB_INCLUDE_PATH = -I../oneTBB/include/
+TBB_LIBRARY_PATH = -L../oneTBB/build/linux_intel64_gcc_cc11_libc2.33_kernel5.17.8_release/
 
-MGPU_INCLUDE_PATH= -I../../moderngpu_1.1/include 
+MGPU_INCLUDE_PATH= -I../../moderngpu_1.1/include/
 
 NVCC = nvcc 
 CC = g++ -fopenmp -ltbb 
