@@ -24,6 +24,7 @@ cp MST_TEST ../../../../cugraph_double
 cd ../../../../
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/cugraph/cpp/build/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/cugraph/cpp/build/libcugraph.so
+conda deactivate
 
 echo 'Converting inputs'
 cd ../inputs/

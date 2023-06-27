@@ -1,16 +1,16 @@
 #!/bin/bash
-echo 'ECL-MST Runs'
-echo 'Creating symlink to inputs'
+echo 'Lonestar Runs'
 
-ln -s ../Inputs inputs
-
-echo 'Running all files...'
-
-for FILE in inputs/*.egr
+for FILE in inputs/*.lsg
 do
-	./mst $FILE >> ecl_mst_out.csv
+	for i in $(seq 9)
+        do
+            echo $FILE >> lonestar_mst_out.csv
+            ./lonestar_mst -t=32 $FILE | grep TimerTotal >> lonestar_mst_out.csv
+        done
+	
 done
 
 echo 'copying results to root directory'
 
-cp ecl_mst_out.csv ..
+cp lonestar_mst_out.csv ..
