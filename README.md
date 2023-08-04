@@ -8,7 +8,7 @@
     - The computational artifact can run the described MST implementation as well as the codes from the related work with the 17 input graphs and compute the median runtimes
     - It can also run various de-optimized versions of our MST code and compute the median runtimes
 3. Software architecture
-    - The URL for the DOI is: TBD
+    - The URL for the DOI is: 10.5281/zenodo.8214364
     - The URL for the Git repository is: https://github.com/alexfallin/MST-Artifact-SC23/
     - The codes from the related work, our MST code, the de-optimized codes, and the input files each have a dedicated directory
     - Each directory contains a build and run script that installs and runs the code in that directory, respectively
