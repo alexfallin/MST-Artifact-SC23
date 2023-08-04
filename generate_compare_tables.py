@@ -3,7 +3,7 @@
 import statistics
 
 print('Reading comparison output files and creating a table and figure')
-outputs = { 'ecl_mst_out.csv',
+outputs = [ 'ecl_mst_out.csv',
             'UMinho_gpu_out.csv',
             'UMinho_omp_out.csv',
             'cugraph_mst_out.csv',
@@ -12,7 +12,7 @@ outputs = { 'ecl_mst_out.csv',
             'pbbs_par_out.csv',
             'pbbs_ser_out.csv',
             'lonestar_mst_out.csv'
-            }
+            ]
 input_sizes = { '2d-2e20.sym':4190208,
                 'amazon0601':4886816,
                 'as-skitter':22190596,
@@ -185,7 +185,7 @@ with open('gunrock_mst_out.csv', 'r') as r:
     throughput_table.append(file_throughputs)
     
 # MST only
-with open('gunrock_mst_out.csv', 'r') as r:
+with open('jucele_mst_out.csv', 'r') as r:
     curr_input = 0
     
     file_runtimes = []
@@ -208,7 +208,7 @@ with open('gunrock_mst_out.csv', 'r') as r:
             values = []
             # Read the next 9 lines
             for i in range(9):
-                values.append(float(line.replace('eclruntime  ', '').replace('s', '')))
+                values.append(float(line.replace('s', '')))
                 line = r.readline()
             file_runtimes.append(statistics.median(values))
             file_throughputs.append((edges / statistics.median(values)) / 1000000)
@@ -216,4 +216,117 @@ with open('gunrock_mst_out.csv', 'r') as r:
             line = r.readline()
     runtime_table.append(file_runtimes)
     throughput_table.append(file_throughputs)
-    print(file_throughputs)
+
+# All inputs
+with open('pbbs_par_out.csv', 'r') as r:
+    curr_input = 0
+    
+    file_runtimes = []
+    file_throughputs = []
+    
+    line = r.readline()
+    # Iterate the read file line by line
+    while line:
+        # If the line is an input
+        if line.endswith('.pbbs\n'):
+            edges = input_sizes[inputs[curr_input]]
+            curr_input = curr_input + 1
+            line = r.readline()
+            values = []
+            # Read the next 9 lines
+            for i in range(9):
+                values.append(float(line))
+                line = r.readline()
+            file_runtimes.append(statistics.median(values))
+            file_throughputs.append((edges / statistics.median(values)) / 1000000)
+        else:
+            line = r.readline()
+    runtime_table.append(file_runtimes)
+    throughput_table.append(file_throughputs)
+
+# All inputs
+with open('pbbs_ser_out.csv', 'r') as r:
+    curr_input = 0
+    
+    file_runtimes = []
+    file_throughputs = []
+    
+    line = r.readline()
+    # Iterate the read file line by line
+    while line:
+        # If the line is an input
+        if line.endswith('.pbbs\n'):
+            edges = input_sizes[inputs[curr_input]]
+            curr_input = curr_input + 1
+            line = r.readline()
+            values = []
+            # Read the next 9 lines
+            for i in range(9):
+                values.append(float(line))
+                line = r.readline()
+            file_runtimes.append(statistics.median(values))
+            file_throughputs.append((edges / statistics.median(values)) / 1000000)
+        else:
+            line = r.readline()
+    runtime_table.append(file_runtimes)
+    throughput_table.append(file_throughputs)
+
+# MST only
+with open('lonestar_mst_out.csv', 'r') as r:
+    curr_input = 0
+    
+    file_runtimes = []
+    file_throughputs = []
+    
+    line = r.readline()
+    # Iterate the read file line by line
+    while line:
+        # If the line starts with an input
+        if line.startswith('inputs/'):
+            this_input = inputs[curr_input]
+            while line.replace('.egr.lsg', '').replace('inputs/', '').strip() != this_input.strip():
+                file_runtimes.append('NC')
+                file_throughputs.append('NC')
+                curr_input = curr_input + 1
+                this_input = inputs[curr_input]
+            edges = input_sizes[inputs[curr_input]]
+            curr_input = curr_input + 1
+            line = r.readline()
+            values = []
+            # Read the next 17 lines
+            for i in range(17):
+                if line.startswith('inputs/'):
+                  line = r.readline()
+                else:
+                  values.append(float(line.split(',')[4]))
+                  line = r.readline()
+            file_runtimes.append(statistics.median(values) / 1000)
+            file_throughputs.append((edges / (statistics.median(values) / 1000)) / 1000000)
+        else:
+            line = r.readline()
+    runtime_table.append(file_runtimes)
+    throughput_table.append(file_throughputs)
+    
+with open("comparison_runtimes.csv", 'w') as w:
+  w.write(',')
+  for output_file in outputs:
+    w.write(output_file.replace('_out.csv', ', '))
+  for row in range(len(inputs)):
+    w.write("\n")
+    w.write(inputs[row])
+    for algo_runtimes in runtime_table:
+      w.write(",")
+      w.write(str(algo_runtimes[row]))
+      
+with open("comparison_throughputs.csv", 'w') as w:
+  w.write(',')
+  for output_file in outputs:
+    w.write(output_file.replace('_out.csv', ', '))
+  for row in range(len(inputs)):
+    w.write("\n")
+    w.write(inputs[row])
+    for algo_throughputs in throughput_table:
+      w.write(",")
+      w.write(str(algo_throughputs[row]))
+      
+print("DONE\nGenerated runtime (comparison_runtimes.csv) and throughput (comparison_throughputs.csv) tables")
