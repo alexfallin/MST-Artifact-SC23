@@ -1,7 +1,7 @@
 /*
 ECL-MST: This code computes the minimum spanning forest of a given input graph.
  
-Copyright (c) 2023, Alex Fallin and Martin Burtscher
+Copyright (c) 2023, Martin Burtscher and Alex Fallin
  
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 URL: The latest version of this code is available at https://cs.txstate.edu/~burtscher/research/ECL-MST/.
  
 Publication: This work is described in detail in the following paper.
-Alex Fallin, Andres Gonzales, Jarim Seo, Randy Cornell, and Martin Burtscher. "A High-Performance MST Implementation for GPUs." Proceedings of the 2023 ACM/IEEE International Conference for High Performance Computing, Networking, Storage, and Analysis. November 2023.
+Alex Fallin, Andres Gonzalez, Jarim Seo, and Martin Burtscher. "A High-Performance MST Implementation for GPUs." Proceedings of the 2023 ACM/IEEE International Conference for High Performance Computing, Networking, Storage, and Analysis. November 2023.
 */
 
 
