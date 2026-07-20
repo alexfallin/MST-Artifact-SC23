@@ -1,3 +1,4 @@
+Note: this is the artifact repository. For the code without all of the extra items, see: https://github.com/burtscher/ECL-MST
 ### Artifact Identification
 1. Main contributions of the paper
     - The paper presents a high-speed Minimum Spanning Tree (MST) implementation for GPUs
